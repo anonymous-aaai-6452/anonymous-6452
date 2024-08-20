@@ -1,0 +1,111 @@
+
+- inference_config: "configs/inference/inference.yaml"
+
+  unet_path: "models/unet.ckpt"
+  image_controlnet_path: "models/image_controlnet.ckpt"
+  flow_controlnet_path: "models/flow_controlnet_obj_0024_2024-05-30_81k_camera_20k.ckpt"
+
+  image_controlnet_config: "configs/inference/image_condition.yaml"
+  flow_controlnet_config: "configs/inference/flow_condition.yaml"
+
+  H: 256
+  W: 384
+  L: 16
+  seed: [42, 16867854766769816385, 7418633423439760965, 1413491334158301410]
+  steps: 25
+  guidance_scale: 7.5
+
+  controlnet_image_indexs: [0]
+  controlnet_images:
+    - "__asset__/images/camera/painting-1.jpg"
+  controlnet_trajs: "__asset__/trajs/camera/painting-1.json"
+  control_mode: "camera"
+
+
+  prompt:
+    - "A oil painting."
+    - "A oil painting."
+    - "A oil painting."
+    - "A oil painting."
+  
+  n_prompt:
+    - "worst quality, low quality, letterboxed"
+    - "worst quality, low quality, letterboxed"
+    - "worst quality, low quality, letterboxed"
+    - "worst quality, low quality, letterboxed"
+
+
+- inference_config: "configs/inference/inference.yaml"
+
+  lora_model_path: "models/personalized/TUSUN.safetensors"
+  lora_alpha: 0.6
+
+  unet_path: "models/unet.ckpt"
+  image_controlnet_path: "models/image_controlnet.ckpt"
+  flow_controlnet_path: "models/flow_controlnet_obj_0024_2024-05-30_81k_camera_20k.ckpt"
+
+  image_controlnet_config: "configs/inference/image_condition.yaml"
+  flow_controlnet_config: "configs/inference/flow_condition.yaml"
+
+  H: 256
+  W: 384
+  L: 16
+  seed: [15131888710792130110, 15764046508285903812, 15131888710792130110, 996953226890228361]
+  steps: 25
+  guidance_scale: 7.5
+
+  controlnet_image_indexs: [0]
+  controlnet_images:
+    - "__asset__/images/camera/tusun-1.jpg"
+  controlnet_trajs: "__asset__/trajs/camera/tusun-1.json"
+  control_mode: "camera"
+
+
+  prompt:
+    - "tusuncub with its mouth open, blurry, open mouth, fangs, photo background, looking at viewer, tongue, full body, solo, cute and lovely, Beautiful and realistic eye details, perfect anatomy, Nonsense, pure background, Centered-Shot, realistic photo, photograph, 4k, hyper detailed, DSLR, 24 Megapixels, 8mm Lens, Full Frame, film grain, Global Illumination, studio Lighting, Award Winning Photography, diffuse reflection, ray tracing."
+    - "tusuncub with its mouth open, blurry, open mouth, fangs, photo background, looking at viewer, tongue, full body, solo, cute and lovely, Beautiful and realistic eye details, perfect anatomy, Nonsense, pure background, Centered-Shot, realistic photo, photograph, 4k, hyper detailed, DSLR, 24 Megapixels, 8mm Lens, Full Frame, film grain, Global Illumination, studio Lighting, Award Winning Photography, diffuse reflection, ray tracing."
+    - "tusuncub with its mouth open, blurry, open mouth, fangs, photo background, looking at viewer, tongue, full body, solo, cute and lovely, Beautiful and realistic eye details, perfect anatomy, Nonsense, pure background, Centered-Shot, realistic photo, photograph, 4k, hyper detailed, DSLR, 24 Megapixels, 8mm Lens, Full Frame, film grain, Global Illumination, studio Lighting, Award Winning Photography, diffuse reflection, ray tracing."
+    - "tusuncub with its mouth open, blurry, open mouth, fangs, photo background, looking at viewer, tongue, full body, solo, cute and lovely, Beautiful and realistic eye details, perfect anatomy, Nonsense, pure background, Centered-Shot, realistic photo, photograph, 4k, hyper detailed, DSLR, 24 Megapixels, 8mm Lens, Full Frame, film grain, Global Illumination, studio Lighting, Award Winning Photography, diffuse reflection, ray tracing."
+  
+  n_prompt:
+    - "worst quality, low quality, letterboxed"
+    - "worst quality, low quality, letterboxed"
+    - "worst quality, low quality, letterboxed"
+    - "worst quality, low quality, letterboxed"
+
+
+- inference_config: "configs/inference/inference.yaml"
+
+  dreambooth_path: "models/personalized/helloobjects_V12c.safetensors"
+  unet_path: "models/unet.ckpt"
+  image_controlnet_path: "models/image_controlnet.ckpt"
+  flow_controlnet_path: "models/flow_controlnet_obj_0024_2024-05-30_81k_camera_20k.ckpt"
+
+  image_controlnet_config: "configs/inference/image_condition.yaml"
+  flow_controlnet_config: "configs/inference/flow_condition.yaml"
+
+  H: 256
+  W: 384
+  L: 16
+  seed: [42, 609252853449662119, 14403297390660198455, 7970487946960948963]
+  steps: 25
+  guidance_scale: 7.5
+
+  controlnet_image_indexs: [0]
+  controlnet_images:
+    - "__asset__/images/camera/lush-1.jpg"
+  controlnet_trajs: "__asset__/trajs/camera/lush-1.json"
+  control_mode: "camera"
+
+
+  prompt:
+    - "Detailed craftsmanship, photorealism, hyperrealistic, roaring waterfall, misty spray, lush greenery, vibrant rainbow, golden ratio composition."
+    - "Detailed craftsmanship, photorealism, hyperrealistic, roaring waterfall, misty spray, lush greenery, vibrant rainbow, golden ratio composition."
+    - "Detailed craftsmanship, photorealism, hyperrealistic, roaring waterfall, misty spray, lush greenery, vibrant rainbow, golden ratio composition."
+    - "Detailed craftsmanship, photorealism, hyperrealistic, roaring waterfall, misty spray, lush greenery, vibrant rainbow, golden ratio composition."
+  
+  n_prompt:
+    - "FastNegativeV2,(bad-artist:1),(worst quality, low quality:1.4),(bad_prompt_version2:0.8),bad-hands-5,lowres,bad anatomy,bad hands,((text)),(watermark),error,missing fingers,extra digit,fewer digits,cropped,worst quality,low quality,normal quality,((username)),blurry,(extra limbs),bad-artist-anime,badhandv4,EasyNegative,ng_deepnegative_v1_75t,verybadimagenegative_v1.3,BadDream,(three hands:1.6),(three legs:1.2),(more than two hands:1.4),(more than two legs,:1.2)"
+    - "FastNegativeV2,(bad-artist:1),(worst quality, low quality:1.4),(bad_prompt_version2:0.8),bad-hands-5,lowres,bad anatomy,bad hands,((text)),(watermark),error,missing fingers,extra digit,fewer digits,cropped,worst quality,low quality,normal quality,((username)),blurry,(extra limbs),bad-artist-anime,badhandv4,EasyNegative,ng_deepnegative_v1_75t,verybadimagenegative_v1.3,BadDream,(three hands:1.6),(three legs:1.2),(more than two hands:1.4),(more than two legs,:1.2)"
+    - "FastNegativeV2,(bad-artist:1),(worst quality, low quality:1.4),(bad_prompt_version2:0.8),bad-hands-5,lowres,bad anatomy,bad hands,((text)),(watermark),error,missing fingers,extra digit,fewer digits,cropped,worst quality,low quality,normal quality,((username)),blurry,(extra limbs),bad-artist-anime,badhandv4,EasyNegative,ng_deepnegative_v1_75t,verybadimagenegative_v1.3,BadDream,(three hands:1.6),(three legs:1.2),(more than two hands:1.4),(more than two legs,:1.2)"
+    - "FastNegativeV2,(bad-artist:1),(worst quality, low quality:1.4),(bad_prompt_version2:0.8),bad-hands-5,lowres,bad anatomy,bad hands,((text)),(watermark),error,missing fingers,extra digit,fewer digits,cropped,worst quality,low quality,normal quality,((username)),blurry,(extra limbs),bad-artist-anime,badhandv4,EasyNegative,ng_deepnegative_v1_75t,verybadimagenegative_v1.3,BadDream,(three hands:1.6),(three legs:1.2),(more than two hands:1.4),(more than two legs,:1.2)"
